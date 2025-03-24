@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "solicituds",
+  "info": {
+    "singularName": "solicitud",
+    "pluralName": "solicituds",
+    "displayName": "Solicitud",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "correo": {
+      "type": "email",
+      "required": true
+    },
+    "solicitud": {
+      "type": "json",
+      "required": true
+    },
+    "estado": {
+      "type": "enumeration",
+      "enum": [
+        "Pendiente",
+        "Aprobado",
+        "En proceso",
+        "Completado",
+        "Cancelado"
+      ],
+      "required": false,
+      "default": "Pendiente"
+    },
+    "fecha_inicio": {
+      "type": "datetime",
+      "required": true
+    },
+    "fecha_fin": {
+      "type": "datetime"
+    }
+  }
+}
