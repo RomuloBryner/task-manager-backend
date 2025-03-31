@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "request_bodies",
+  "info": {
+    "singularName": "request-body",
+    "pluralName": "request-bodies",
+    "displayName": "Request Body"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "request": {
+      "type": "json",
+      "required": true
+    }
+  }
+}

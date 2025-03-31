@@ -369,37 +369,67 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiSolicitudSolicitud extends Struct.CollectionTypeSchema {
-  collectionName: 'solicituds';
+export interface ApiRequestBodyRequestBody extends Struct.SingleTypeSchema {
+  collectionName: 'request_bodies';
   info: {
-    description: '';
-    displayName: 'Solicitud';
-    pluralName: 'solicituds';
-    singularName: 'solicitud';
+    displayName: 'Request Body';
+    pluralName: 'request-bodies';
+    singularName: 'request-body';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    correo: Schema.Attribute.Email & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    estado: Schema.Attribute.Enumeration<
-      ['Pendiente', 'Aprobado', 'En proceso', 'Completado', 'Cancelado']
-    > &
-      Schema.Attribute.DefaultTo<'Pendiente'>;
-    fecha_fin: Schema.Attribute.DateTime;
-    fecha_inicio: Schema.Attribute.DateTime & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::solicitud.solicitud'
+      'api::request-body.request-body'
     > &
       Schema.Attribute.Private;
-    nombre: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    solicitud: Schema.Attribute.JSON & Schema.Attribute.Required;
+    request: Schema.Attribute.JSON & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiRequestRequest extends Struct.CollectionTypeSchema {
+  collectionName: 'requests';
+  info: {
+    description: '';
+    displayName: 'request';
+    pluralName: 'requests';
+    singularName: 'request';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
+    end_date: Schema.Attribute.DateTime;
+    limit_date: Schema.Attribute.DateTime;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::request.request'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    progress: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    request: Schema.Attribute.JSON & Schema.Attribute.Required;
+    responsible: Schema.Attribute.String;
+    start_date: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    statuss: Schema.Attribute.Enumeration<
+      ['Pending', 'Approved', 'In Process', 'Completed', 'Cancelled']
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -915,7 +945,8 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::solicitud.solicitud': ApiSolicitudSolicitud;
+      'api::request-body.request-body': ApiRequestBodyRequestBody;
+      'api::request.request': ApiRequestRequest;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
