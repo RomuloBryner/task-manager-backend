@@ -9,6 +9,10 @@ export default ({ env }) => ({
           user: env("SMTP_USER"),
           pass: env("SMTP_PASS"),
         },
+        tls: {
+          // Esta parte es la clave para permitir certificados autofirmados
+          rejectUnauthorized: false,
+        },
       },
       settings: {
         defaultFrom: env("SMTP_USER"),

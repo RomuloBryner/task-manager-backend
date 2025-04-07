@@ -4,7 +4,8 @@
   "info": {
     "singularName": "request-body",
     "pluralName": "request-bodies",
-    "displayName": "Request Body"
+    "displayName": "Request Body",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +14,13 @@
     "request": {
       "type": "json",
       "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": false
+    },
+    "info": {
+      "type": "string"
     }
   }
 }

@@ -17,7 +17,7 @@
     },
     "email": {
       "type": "email",
-      "required": true
+      "required": false
     },
     "request": {
       "type": "json",
@@ -48,6 +48,10 @@
         "Completed",
         "Cancelled"
       ]
+    },
+    "global_id": {
+      "type": "string",
+      "required": true
     }
   }
 }
