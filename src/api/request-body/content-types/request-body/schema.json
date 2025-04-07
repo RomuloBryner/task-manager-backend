@@ -20,7 +20,7 @@
       "required": false
     },
     "info": {
-      "type": "string"
+      "type": "text"
     }
   }
 }

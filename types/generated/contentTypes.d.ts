@@ -384,7 +384,7 @@ export interface ApiRequestBodyRequestBody extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    info: Schema.Attribute.String;
+    info: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -415,6 +415,20 @@ export interface ApiRequestRequest extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    department: Schema.Attribute.Enumeration<
+      [
+        'Project',
+        'VS Biopsy',
+        'VS PPA',
+        'BD Excellence',
+        'Incoming and Supplier Quality',
+        'Environmental Quality',
+        'EHS',
+        'Maintenance and Facilities',
+        'Quality Assurance',
+        'Quality Systems',
+      ]
+    >;
     email: Schema.Attribute.Email;
     end_date: Schema.Attribute.DateTime;
     global_id: Schema.Attribute.String & Schema.Attribute.Required;
