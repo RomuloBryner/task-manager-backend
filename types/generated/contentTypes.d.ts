@@ -415,22 +415,10 @@ export interface ApiRequestRequest extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    department: Schema.Attribute.Enumeration<
-      [
-        'Project',
-        'VS Biopsy',
-        'VS PPA',
-        'BD Excellence',
-        'Incoming and Supplier Quality',
-        'Environmental Quality',
-        'EHS',
-        'Maintenance and Facilities',
-        'Quality Assurance',
-        'Quality Systems',
-      ]
-    >;
+    department: Schema.Attribute.String & Schema.Attribute.Required;
     email: Schema.Attribute.Email;
     end_date: Schema.Attribute.DateTime;
+    estimated_end_date: Schema.Attribute.DateTime;
     global_id: Schema.Attribute.String & Schema.Attribute.Required;
     limit_date: Schema.Attribute.DateTime;
     locale: Schema.Attribute.String & Schema.Attribute.Private;

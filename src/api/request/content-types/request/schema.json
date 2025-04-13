@@ -54,19 +54,11 @@
       "required": true
     },
     "department": {
-      "type": "enumeration",
-      "enum": [
-        "Project",
-        "VS Biopsy",
-        "VS PPA",
-        "BD Excellence",
-        "Incoming and Supplier Quality",
-        "Environmental Quality",
-        "EHS",
-        "Maintenance and Facilities",
-        "Quality Assurance",
-        "Quality Systems"
-      ]
+      "type": "string",
+      "required": true
+    },
+    "estimated_end_date": {
+      "type": "datetime"
     }
   }
 }
