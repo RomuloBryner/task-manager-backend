@@ -4,4 +4,7 @@ export default ({ env }) => ({
   app: {
     keys: env.array('APP_KEYS'),
   },
+  // 👇 Asegura que Strapi use la zona horaria correcta
+  cron: { enabled: true },
+  timezone: 'America/Santo_Domingo',
 });
