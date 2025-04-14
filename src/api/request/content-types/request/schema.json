@@ -59,6 +59,9 @@
     },
     "estimated_end_date": {
       "type": "datetime"
+    },
+    "additional_info": {
+      "type": "text"
     }
   }
 }
