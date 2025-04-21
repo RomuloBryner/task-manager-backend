@@ -11,10 +11,6 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "request": {
-      "type": "json",
-      "required": true
-    },
     "title": {
       "type": "string",
       "required": false

@@ -62,6 +62,9 @@
     },
     "additional_info": {
       "type": "text"
+    },
+    "cancel_info": {
+      "type": "text"
     }
   }
 }

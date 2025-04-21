@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "request_forms",
+  "info": {
+    "singularName": "request-form",
+    "pluralName": "request-forms",
+    "displayName": "request_form",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "request": {
+      "type": "json",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
